@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import colorData from './color-data'
 import ColorList from "./components/ColorList";
+import AddColorForm from "./components/AddColorForm";
 
 function App() {
 
@@ -20,11 +21,15 @@ function App() {
 
 
   return (
-    <ColorList
-        colors = {colors}
-        onRateColor={rateColor}
-        onRemoveColor={removeColor}
-    />
+      <div>
+        <ColorList
+            colors = {colors}
+            onRateColor={rateColor}
+            onRemoveColor={removeColor}
+        />
+        <AddColorForm/>
+      </div>
+
   );
 }
 
