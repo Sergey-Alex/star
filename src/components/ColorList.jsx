@@ -4,7 +4,7 @@ import Color from "./Color";
 const ColorList = ({
                        colors = [],
                        onRemoveColor = f => f,
-                        onRateColor = f => f
+                       onRateColor = f => f
                    }) => {
     if (!colors.length) return <h3>No colors Listed</h3>
 

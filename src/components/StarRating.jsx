@@ -1,29 +1,23 @@
 import React from 'react';
 import Star from "./Star";
-import classes from './Star.module.css'
-
-
-const StarRating = ({totalStars = 5,
-                        selectedStar = 0,
-                        onRate = f => f }) => {
-    const createArray = length => [...Array(length)]
-
-   // const [selectedStar,setSelectedStar] = useState(0)
+import {createArray} from "./lib";
+import cl from './Star.module.css'
+const StarRating = ({totalStars = 5, selectedStars = 0, onRate = f => f }) => {
 
     return (
-        <div className={classes.container}>
-            {createArray(totalStars).map((n, i) =>
+        <div className={cl.container}>
+            {createArray(totalStars).map((n, i) => (
                 <Star
-                    key ={i}
-                    selected={selectedStar > i}
-                    onSelect={() => onRate(i+1)}
+                    key={i}
+                    selected={selectedStars > i}
+                    onSelect={() => onRate(i + 1)}
                 />
-             )}
-             <p>{selectedStar} of {totalStars}</p>
+            ))}
+            <p>
+                {selectedStars} of {totalStars} stars
+            </p>
         </div>
-
     )
-
 };
 
 export default StarRating;
